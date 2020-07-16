@@ -6,8 +6,8 @@ import { ApolloServer, gql } from 'apollo-server-express';
 // from an existing data source like a REST API or database.
 const books = [
   {
-    title: "Harry Potter and the Chamber of Secrets",
-    author: "J.K. Rowling"
+    title: "Parable of the Sower",
+    author: "Octavia E. Butler"
   },
   {
     title: "Jurassic Park",
@@ -47,7 +47,7 @@ const server = new ApolloServer({
 });
 
 const app = express();
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/' });
 
 app.listen({ port: 4000 }, () => {
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
