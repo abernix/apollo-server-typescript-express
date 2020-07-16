@@ -44,10 +44,18 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  playground: {
+    settings: {
+      "editor.theme": "light",
+    },
+  },
 });
 
 const app = express();
-server.applyMiddleware({ app, path: '/' });
+server.applyMiddleware({
+  app,
+  path: '/',
+});
 
 app.listen({ port: 4000 }, () => {
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
