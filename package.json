@@ -6,7 +6,7 @@
   "author": "Jesse Rosenberger",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run build && yarn run serve",
+    "start": "yarn run build && yarn run watch",
     "build": "yarn run build-ts",
     "serve": "./node_modules/node/node_modules/.bin/node dist/server.js",
     "watch-node": "nodemon dist/server.js",
