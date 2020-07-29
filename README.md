@@ -1,4 +1,4 @@
-# Apollo Server Exprss TypeScript Reproduction Starter
+# Apollo Server Express TypeScript Reproduction Starter
 
 I (@abernix) use this to kick-off a wide variety of little sample applications,
 either during the creation of reproductions or during the demonstration of
