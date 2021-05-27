@@ -23,14 +23,14 @@
     "@apollo/federation": "latest",
     "@apollo/gateway": "latest",
     "apollo-server-express": "latest",
-    "node": "14.x",
-    "graphql": "15.x",
-    "express": "^4.16.2"
+    "node": "14.16.1",
+    "graphql": "15.5.0",
+    "express": "4.17.1"
   },
   "devDependencies": {
-    "@types/express": "^4.11.1",
+    "@types/express": "4.17.12",
     "@types/jest": "latest",
-    "@types/node": "14.x",
+    "@types/node": "14.17.1",
     "concurrently": "latest",
     "jest": "latest",
     "nodemon": "latest",
