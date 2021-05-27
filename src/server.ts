@@ -1,5 +1,6 @@
-import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import express from "express";
+import { ApolloServer, gql } from "apollo-server-express";
+import type { Server } from "http";
 
 // This is a (sample) collection of books we'll be able to query
 // the GraphQL server for.  A more complete example might fetch
@@ -7,12 +8,12 @@ import { ApolloServer, gql } from 'apollo-server-express';
 const books = [
   {
     title: "Parable of the Sower",
-    author: "Octavia E. Butler"
+    author: "Octavia E. Butler",
   },
   {
     title: "Jurassic Park",
-    author: "Michael Crichton"
-  }
+    author: "Michael Crichton",
+  },
 ];
 
 // Type definitions define the "shape" of your data and specify
@@ -38,8 +39,16 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     books: () => books,
-  }
+  },
 };
+
+// This just makes the CodeSandbox experience nicer for reproductions.
+// For example, you can replace this with a query that reproduces a bug.
+const defaultQueryForPlayground = `{
+  books {
+    title
+  }
+}`;
 
 const server = new ApolloServer({
   typeDefs,
@@ -48,15 +57,44 @@ const server = new ApolloServer({
     settings: {
       "editor.theme": "light",
     },
+    tabs: [
+      {
+        endpoint: null, // Defaults to window.location.href URL
+        query: defaultQueryForPlayground,
+      },
+    ],
   },
 });
 
 const app = express();
-server.applyMiddleware({
-  app,
-  path: '/',
-});
 
-app.listen({ port: 4000 }, () => {
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
-});
+async function startApolloServer() {
+  await server.start();
+
+  server.applyMiddleware({
+    app,
+    path: "/",
+  });
+
+  let httpServer: Server;
+  await new Promise<void>(
+    (resolve) => (httpServer = app.listen(0, "127.0.0.1", () => resolve()))
+  );
+  return { server, app, httpServer };
+}
+
+startApolloServer()
+  .then(({ httpServer }) => {
+    const address = httpServer.address();
+    const serverUrl =
+      process.env.SANDBOX_URL ??
+      (typeof address === "string"
+        ? address
+        : `http://${address.address}:${address.port}`);
+    console.log(`🚀 Server ready at ${serverUrl}`);
+  })
+  .catch((err) => {
+    console.error("An error occurred during `startApolloServer`:");
+    console.error(err);
+    process.exit(1);
+  });
