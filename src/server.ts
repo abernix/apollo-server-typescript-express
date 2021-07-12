@@ -42,28 +42,9 @@ const resolvers = {
   },
 };
 
-// This just makes the CodeSandbox experience nicer for reproductions.
-// For example, you can replace this with a query that reproduces a bug.
-const defaultQueryForPlayground = `{
-  books {
-    title
-  }
-}`;
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  playground: {
-    settings: {
-      "editor.theme": "light",
-    },
-    tabs: [
-      {
-        endpoint: null, // Defaults to window.location.href URL
-        query: defaultQueryForPlayground,
-      },
-    ],
-  },
 });
 
 const app = express();
