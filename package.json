@@ -24,7 +24,7 @@
     "@apollo/gateway": "latest",
     "apollo-server-express": "latest",
     "node": "16.1.0",
-    "graphql": "15.5.0",
+    "graphql": "15.5.1",
     "express": "4.17.1"
   },
   "devDependencies": {
