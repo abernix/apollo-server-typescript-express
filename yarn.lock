@@ -869,10 +869,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.1.tgz#24691fa2b0c3ec8c0d34bfcfd495edac5593ebb4"
   integrity sha512-N87VuQi7HEeRJkhzovao/JviiqKjDKMVKxKMfUvSKw+MbkbW8R0nA3fi/MQhhlxV2fQ+2ReM+/Nt4efdrJx3zA==
 
-"@types/node@14.17.18":
-  version "14.17.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.18.tgz#0198489a751005f71217744aa966cd1f29447c81"
-  integrity sha512-haYyibw4pbteEhkSg0xdDLAI3679L75EJ799ymVrPxOA922bPx3ML59SoDsQ//rHlvqpu+e36kcbR3XRQtFblA==
+"@types/node@14.17.20":
+  version "14.17.20"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.20.tgz#74cc80438fd0467dc4377ee5bbad89a886df3c10"
+  integrity sha512-gI5Sl30tmhXsqkNvopFydP7ASc4c2cLfGNQrVKN3X90ADFWFsPEsotm/8JHSUJQKTHbwowAHtcJPeyVhtKv0TQ==
 
 "@types/node@^10.1.0":
   version "10.17.60"
@@ -3514,10 +3514,10 @@ node-releases@^1.1.71:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.73.tgz#dd4e81ddd5277ff846b80b52bb40c49edf7a7b20"
   integrity sha512-uW7fodD6pyW2FZNZnp/Z3hvWKeEW1Y8R1+1CnErE8cXFXzl5blBOoVB41CvMer6P6Q0S5FXDwcHgFd1Wj0U9zg==
 
-node@14.17.6:
-  version "14.17.6"
-  resolved "https://registry.yarnpkg.com/node/-/node-14.17.6.tgz#4834aaf50da41740a88e15408baf5e793d4f3127"
-  integrity sha512-bnXk1lBs8Gh/Md5MP4ziojLOMBU05QLc16Ie7/rNORpLf1K5+2OdEl4KbMfllE3cDWM//qQXyvN59ZSZdFnBaQ==
+node@14.18.0:
+  version "14.18.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-14.18.0.tgz#22457e7e3baee85277da1364a8aeaacd6679dfcd"
+  integrity sha512-ho+MOL09f9W1lQ4ECUGv+2wuShttuZ6QnOIomhQ6ZQ2ZYovOCUtK0Z0796mnag2DZmA+v+R/4qsiXFnlMGBn3w==
   dependencies:
     node-bin-setup "^1.0.0"
 
