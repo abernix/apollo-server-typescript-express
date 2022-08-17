@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/express": "4.17.13",
     "@types/jest": "latest",
-    "@types/node": "14.18.23",
+    "@types/node": "14.18.24",
     "concurrently": "latest",
     "jest": "latest",
     "nodemon": "latest",
