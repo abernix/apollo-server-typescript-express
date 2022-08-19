@@ -46,7 +46,7 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  csrfProtection: false,
+  csrfPrevention: false,
   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })]
 });
 
