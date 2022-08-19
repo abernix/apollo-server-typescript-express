@@ -1,6 +1,7 @@
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
 import type { Server } from "http";
+import { ApolloServerPluginLandingPageLocalDefault } from "apollo-server-core";
 
 // This is a (sample) collection of books we'll be able to query
 // the GraphQL server for.  A more complete example might fetch
@@ -45,6 +46,8 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  csrfProtection: false,
+  plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })]
 });
 
 const app = express();

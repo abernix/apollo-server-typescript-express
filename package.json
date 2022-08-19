@@ -6,7 +6,7 @@
   "author": "Jesse Rosenberger",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run build && yarn run watch",
+    "start": "yarn run build; yarn run watch",
     "build": "yarn run build-ts",
     "serve": "npx node dist/server.js",
     "watch-node": "nodemon dist/server.js",
@@ -15,7 +15,7 @@
     "watch-test": "yarn run test -- --watchAll",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "debug": "yarn run build && yarn run watch-debug",
+    "debug": "yarn run build; yarn run watch-debug",
     "serve-debug": "nodemon --inspect ./dist/server.js -w ../../packages/\\*/\\*\\*/ --ignore 'src/' -w .",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn run watch-ts\" \"yarn run serve-debug\""
   },
@@ -24,8 +24,7 @@
     "@apollo/gateway": "latest",
     "apollo-server-express": "latest",
     "express": "4.18.1",
-    "graphql": "16.6.0",
-    "node": "14.20.0"
+    "graphql": "15.x"
   },
   "devDependencies": {
     "@types/express": "4.17.13",
@@ -37,8 +36,5 @@
     "ts-jest": "latest",
     "ts-node": "latest",
     "typescript": "latest"
-  },
-  "nodemonConfig": {
-    "exec": "npx node"
   }
 }
