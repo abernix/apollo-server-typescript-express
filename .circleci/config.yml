@@ -1,0 +1,15 @@
+version: '2.1'
+orbs:
+  node: circleci/node@5.0.2
+jobs:
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages
+      - run: sudo npm install -g npm@8
+      - run: npm run build
+workflows:
+  test_build:
+    jobs:
+      - build
