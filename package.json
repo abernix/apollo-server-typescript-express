@@ -20,7 +20,7 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "dependencies": {
-    "@apollo/gateway": "2.3.1",
+    "@apollo/gateway": "2.3.2",
     "apollo-server-express": "3.11.1",
     "express": "4.18.2",
     "graphql": "16.6.0"
