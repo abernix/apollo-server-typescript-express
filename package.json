@@ -23,7 +23,7 @@
     "@apollo/gateway": "2.5.6",
     "apollo-server-express": "3.13.0",
     "express": "4.19.2",
-    "graphql": "16.8.2"
+    "graphql": "16.9.0"
   },
   "devDependencies": {
     "@types/express": "4.17.21",
